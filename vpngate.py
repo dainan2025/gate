@@ -303,7 +303,7 @@ def dedupe(nodes):
     out = []
     for n in nodes:
         key = (n["host"].lower(), n["port"], "sstp")
-        if key in seen: continue
+NODES_URL = os.environ.get("NODES_URL", "https://dainan2025.github.io/gate/nodes.txt")
         seen.add(key)
         out.append(n)
     return out
